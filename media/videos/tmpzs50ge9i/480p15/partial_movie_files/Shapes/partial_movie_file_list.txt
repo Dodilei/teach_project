@@ -1,7 +1,0 @@
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpzs50ge9i/480p15/partial_movie_files/Shapes/00020.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpzs50ge9i/480p15/partial_movie_files/Shapes/00021.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpzs50ge9i/480p15/partial_movie_files/Shapes/00022.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpzs50ge9i/480p15/partial_movie_files/Shapes/00023.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpzs50ge9i/480p15/partial_movie_files/Shapes/00024.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpzs50ge9i/480p15/partial_movie_files/Shapes/00025.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpzs50ge9i/480p15/partial_movie_files/Shapes/00026.mp4'

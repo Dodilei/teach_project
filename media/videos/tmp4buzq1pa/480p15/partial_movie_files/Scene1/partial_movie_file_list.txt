@@ -1,5 +1,0 @@
-file '/home/mauricio/Documents/Teach Project/media/videos/tmp4buzq1pa/480p15/partial_movie_files/Scene1/00000.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmp4buzq1pa/480p15/partial_movie_files/Scene1/00001.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmp4buzq1pa/480p15/partial_movie_files/Scene1/00002.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmp4buzq1pa/480p15/partial_movie_files/Scene1/00003.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmp4buzq1pa/480p15/partial_movie_files/Scene1/00004.mp4'

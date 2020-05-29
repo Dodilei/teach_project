@@ -1,3 +1,0 @@
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpngrrxnhk/480p15/partial_movie_files/SquareToCircle/00000.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpngrrxnhk/480p15/partial_movie_files/SquareToCircle/00001.mp4'
-file '/home/mauricio/Documents/Teach Project/media/videos/tmpngrrxnhk/480p15/partial_movie_files/SquareToCircle/00002.mp4'

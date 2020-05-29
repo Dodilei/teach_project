@@ -1,4 +1,0 @@
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmphhrmu8gk/480p15/partial_movie_files/LlamasToCircles/00000.mp4'
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmphhrmu8gk/480p15/partial_movie_files/LlamasToCircles/00001.mp4'
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmphhrmu8gk/480p15/partial_movie_files/LlamasToCircles/00002.mp4'
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmphhrmu8gk/480p15/partial_movie_files/LlamasToCircles/00003.mp4'

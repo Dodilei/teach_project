@@ -1,4 +1,0 @@
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmph91l72bw/480p15/partial_movie_files/Llamas/00000.mp4'
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmph91l72bw/480p15/partial_movie_files/Llamas/00001.mp4'
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmph91l72bw/480p15/partial_movie_files/Llamas/00002.mp4'
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmph91l72bw/480p15/partial_movie_files/Llamas/00003.mp4'

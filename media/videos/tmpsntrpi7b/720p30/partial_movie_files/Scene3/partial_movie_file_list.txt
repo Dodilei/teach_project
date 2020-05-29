@@ -1,2 +1,0 @@
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmpsntrpi7b/720p30/partial_movie_files/Scene3/00000.mp4'
-file 'file:/home/mauricio/Documents/Teach Project/media/videos/tmpsntrpi7b/720p30/partial_movie_files/Scene3/00001.mp4'
