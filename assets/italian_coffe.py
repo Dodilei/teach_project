@@ -39,7 +39,7 @@ class Italian_coffe(SVGMobject):
         def flatten_index(*keys):
             indexes = []
             for k in keys:
-                indexes += [*Centaur.index_names[k]]
+                indexes += [*Italian_coffe.index_names[k]]
             return indexes
 
         for i in flatten_index("button_shadow", "handle", "detail_shadow", "middle_shadow"):
