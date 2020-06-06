@@ -11,7 +11,7 @@ class Italian_coffe(SVGMobject):
         "button": (0,),
         "button_shadow": (1,),
         "top": (2,),
-        "top_shadow:" (3,),
+        "top_shadow": (3,),
         "handle": (4,),
         "pourer": (5,),
         "middle": (6,),
