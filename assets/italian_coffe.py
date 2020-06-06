@@ -8,14 +8,14 @@ class Italian_coffe(SVGMobject):
         }
 
     index_names = {
-        "button": (0),
-        "button_shadow": (1),
-        "top": (2),
-        "top_shadow:" (3),
-        "handle": (4),
-        "pourer": (5),
-        "middle": (6),
-        "middle_shadow": (7),
+        "button": (0,),
+        "button_shadow": (1,),
+        "top": (2,),
+        "top_shadow:" (3,),
+        "handle": (4,),
+        "pourer": (5,),
+        "middle": (6,),
+        "middle_shadow": (7,),
         "body": (8, 9),
         "body_shadow": (10, 11),
         "detail": (12, 13, 14),

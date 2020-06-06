@@ -9,24 +9,24 @@ class Centaur(SVGMobject):
 
     index_names = {
         "ears": (0,1),
-        "tail_light": (2),
-        "tail_shadow": (3),
-        "leg_back_lower": (4),
-        "foot_back_shadow": (5),
-        "body_horse": (6),
+        "tail_light": (2,),
+        "tail_shadow": (3,),
+        "leg_back_lower": (4,),
+        "foot_back_shadow": (5,),
+        "body_horse": (6,),
         "leg_front_shadow": (7,9),
-        "leg_back_upper": (8),
-        "midleg_shadow": (10),
-        "body_top_shadow": (11),
-        "body_man": (12),
+        "leg_back_upper": (8,),
+        "midleg_shadow": (10,),
+        "body_top_shadow": (11,),
+        "body_man": (12,),
         "nipple": (13, 14),
-        "face_shadow": (15),
-        "body_shadow": (16),
-        "head": (17),
-        "beard": (18),
+        "face_shadow": (15,),
+        "body_shadow": (16,),
+        "head": (17,),
+        "beard": (18,),
         "eyes": (19, 20),
         "foot_front": (21, 22),
-        "foot_back_upper": (23)
+        "foot_back_upper": (23,)
     }
 
     def __init__(self, **kwargs):
