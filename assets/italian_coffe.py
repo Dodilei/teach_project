@@ -3,7 +3,7 @@ import os
 
 class Italian_coffe(SVGMobject):
     CONFIG = {
-        "height": 3,
+        "height": 1.5,
         "stroke_color": WHITE
         }
 
