@@ -2,6 +2,7 @@ from manimlib.imports import *
 import os
 
 
+
 def c_adder(color1, color2, return_as_string=True):
 	
     if type(color1) == str:
@@ -38,7 +39,7 @@ class Llama(SVGMobject):
     }
 
     @staticmethod
-    def create_llama_herd(n, h, w, s, pos_set = [1,1], size_set=1, width_ratio=7/9):
+    def create_llama_herd(n, h, w, s, pos_set = [1,1], size_set=1, width_ratio=7/9, make_a_mess = False):
         
         nums_init = np.random.rand(n, 4)
         nums_init[:, 1:4] += -0.5
@@ -64,11 +65,18 @@ class Llama(SVGMobject):
             
             
         llamas_to_sort.sort(reverse = True, key= lambda x: x.get_center()[1])
-        
-        for _, llama in llamas_to_sort:
-            llama.set_colors(main = c_adder(llama.main_color, -0x101010*(1/h)*(llama.get_center()[1].astype(np.int64))),
-                        stroke_color = BLACK)
-            
+        if make_a_mess:
+            for _, llama in llamas_to_sort:
+                llama.set_colors(main = c_adder(llama.main_color, -0x101010*(1/h)*(llama.get_center()[1].astype(np.int64))),
+                            stroke_color = BLACK)
+        else:
+            for _, llama in llamas_to_sort:
+                print(llama.get_center())
+                shadow_piece = round(0x20*(1/h)*(llama.get_center()[1].astype(np.int64)))
+                shadow = -(shadow_piece*0x010101)
+                llama.set_colors(main = c_adder(llama.main_color, shadow),
+                            stroke_color = BLACK)
+                
             
         llamas.add(*llamas_to_sort)
             
