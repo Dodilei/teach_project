@@ -93,29 +93,24 @@ class Old_sheperd(SVGMobject):
         svg_file = os.path.join(os.getcwd(), "assets", default_file + ".svg")
         SVGMobject.__init__(self, file_name = svg_file, **kwargs)
         
-        self.set_color_()
+        self.set_colors()
+        self.set_strokes()
 
     def think(self):
-        rect = Rectangle(width = self.height*0.3, height = self.height, fill_color = BLACK, fill_opacity=1, stroke_opacity=0)
-        rect.move_to(self.get_center())
-        thinking = Sheperd(mode = "thinking", height=self.height)
+        
+        thinking = Old_sheperd(mode = "thinking", height=self.height)
         thinking.set_style(**self.get_style())
-        thinking.set_color_()
         thinking.move_to(self.get_center())
-        thinking.remove(thinking[-1])
         last = self
         self = thinking
 
-        bubble = ThoughtBubble(height = 1.2, width = 1.2, stroke_color = GRAY, FILE_DIR = "/home/mauricio/anaconda3/envs/manim/lib/python3.7/site-packages/manimlib/files/")
+        bubble = ThoughtBubble(height = 1.2, width = 1.2, stroke_color = GRAY)
         #bubble.set_color(WHITE)
         bubble.move_to(self.get_center() + UP*1.8 + RIGHT*1)
         text = TextMobject("?", color = WHITE)
         bubble.add_content(text)
-        
-        rotate_center = last[-1].get_center()+(RIGHT*0.6+UP*0.2)*last.height*0.3
-        angle = -np.pi/4
-    
-        return (bubble, FadeOut(last), FadeIn(rect), FadeIn(self), Rotate(last[-1], angle, about_point=rotate_center), Rotate(last[-2], angle, about_point=rotate_center), FadeIn(bubble), FadeIn(text))
+
+        return (bubble, ReplacementTransform(last, self), FadeIn(bubble), FadeIn(text))
 
     def set_colors(self, opacity = 1, stroke_color = BLACK, stroke_opacity = 0, override = None):
         
@@ -156,8 +151,10 @@ class Old_sheperd(SVGMobject):
 
         self.set_stroke(color = stroke_color, opacity = stroke_opacity)
 
+        return self
 
-    def set_stroke(self, opacity = 1, override = None):
+
+    def set_strokes(self, color = BLACK, opacity = 1, width = 2.5, override = None):
         
         if override != None:
             self.set_stroke(override, opacity = opacity)
@@ -170,28 +167,28 @@ class Old_sheperd(SVGMobject):
             return indexes
 
         for i in flatten_index("hand", "head", "leg", "eyelid"):
-            self.submobjects[i].set_stroke(color = BLACK, opacity = opacity, width = 1)
+            self.submobjects[i].set_stroke(color = color, opacity = opacity, width = width)
 
         for i in flatten_index("arm_back", "body", "arm_front_stroke"):
-            self.submobjects[i].set_stroke(color = BLACK, opacity = opacity, width = 1)
+            self.submobjects[i].set_stroke(color = color, opacity = opacity, width = width)
 
         for i in flatten_index("arm_front"):
-            self.submobjects[i].set_stroke(color = BLACK, opacity = 0, width = 1)
+            self.submobjects[i].set_stroke(color = color, opacity = 0, width = width)
 
         for i in flatten_index("staff", "hat"):
-            self.submobjects[i].set_stroke(color = BLACK, opacity = opacity, width = 1)
+            self.submobjects[i].set_stroke(color = color, opacity = opacity, width = width)
 
         for i in flatten_index("foot"):
-            self.submobjects[i].set_stroke(color = BLACK, opacity = opacity, width = 1)
+            self.submobjects[i].set_stroke(color = color, opacity = opacity, width = width)
 
         for i in flatten_index("eye", "mouth"):
-            self.submobjects[i].set_stroke(color = BLACK, opacity = 0, width = 1)
+            self.submobjects[i].set_stroke(color = color, opacity = 0, width = width)
 
         for i in flatten_index("beard"):
-            self.submobjects[i].set_stroke(color = BLACK, opacity = opacity, width = 1)
+            self.submobjects[i].set_stroke(color = color, opacity = opacity, width = width)
 
 
-        self.set_stroke(color = stroke_color, opacity = stroke_opacity)
+        return self
 		
         
 		
