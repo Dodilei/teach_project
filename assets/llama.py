@@ -66,7 +66,7 @@ class Llama(SVGMobject):
         llamas_to_sort.sort(reverse = True, key= lambda x: x.get_center()[1])
         
         for _, llama in llamas_to_sort:
-            llama.set_colors(main = c_adder(llama.main_color, -0x101010*(3/h)*(llama.get_center()[1].astype(np.int64))),
+            llama.set_colors(main = c_adder(llama.main_color, -0x101010*(1/h)*(llama.get_center()[1].astype(np.int64))),
                         stroke_color = BLACK)
             
             

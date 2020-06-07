@@ -99,7 +99,7 @@ class Old_sheperd(SVGMobject):
 
     def think(self):
         
-        thinking = Old_sheperd(mode = "thinking", height=self.height)
+        thinking = Old_sheperd(mode = "thinking", height=self.__dict__["height"])
         thinking.move_to(self.get_center())
         last = self
         self = thinking
