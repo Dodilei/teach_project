@@ -1,4 +1,5 @@
 from manimlib.imports import *
+from assets.drawings import ThoughtBubble
 import os
 
 class Sheperd(SVGMobject):
@@ -99,7 +100,6 @@ class Old_sheperd(SVGMobject):
     def think(self):
         
         thinking = Old_sheperd(mode = "thinking", height=self.height)
-        thinking.set_style(**self.get_style())
         thinking.move_to(self.get_center())
         last = self
         self = thinking

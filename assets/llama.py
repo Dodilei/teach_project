@@ -1,7 +1,21 @@
 from manimlib.imports import *
 import os
-from c_adder import color_adder as c_adder
 
+
+def c_adder(color1, color2, return_as_string=True):
+	
+    if type(color1) == str:
+        color1 = int("0x"+color1[1:], 16)
+
+    if type(color2) == str:
+        color2 = int("0x"+color2[1:], 16)
+
+    added = hex(int(color1) + int(color2))
+	
+    if return_as_string: 
+        return ("#" + str(added)[2:])
+    else:
+        return added
 
 class Llama(SVGMobject):
     CONFIG = {
@@ -52,7 +66,7 @@ class Llama(SVGMobject):
         llamas_to_sort.sort(reverse = True, key= lambda x: x.get_center()[1])
         
         for _, llama in llamas_to_sort:
-            llama.set_colors(main = c_adder(llama.main_color, -0x101010*(llama.get_center()[1].astype(np.int64))),
+            llama.set_colors(main = c_adder(llama.main_color, -0x101010*(3/h)*(llama.get_center()[1].astype(np.int64))),
                         stroke_color = BLACK)
             
             
