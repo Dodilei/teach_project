@@ -93,24 +93,33 @@ class Old_sheperd(SVGMobject):
             default_file = "sheperd_old_" + mode
         svg_file = os.path.join(os.getcwd(), "assets", default_file + ".svg")
         SVGMobject.__init__(self, file_name = svg_file, **kwargs)
-        
+
         self.set_colors()
         self.set_strokes()
 
-    def think(self):
+    def think(self, **kwargs):
         
-        thinking = Old_sheperd(mode = "thinking", height=self.__dict__["height"])
+        thinking = Old_sheperd(mode = "thinking", **kwargs)
         thinking.move_to(self.get_center())
-        last = self
+        self.last = self
         self = thinking
 
-        bubble = ThoughtBubble(height = 1.2, width = 1.2, stroke_color = GRAY)
-        #bubble.set_color(WHITE)
-        bubble.move_to(self.get_center() + UP*1.8 + RIGHT*1)
+        self.bubble = ThoughtBubble(height = 1.2, width = 1.2, stroke_color = GRAY)
+        #self.bubble.set_color(WHITE)
+        self.bubble.move_to(self.get_center() + UP*1.8 + RIGHT*1)
         text = TextMobject("?", color = WHITE)
-        bubble.add_content(text)
+        self.bubble.add_content(text)
 
-        return (bubble, ReplacementTransform(last, self), FadeIn(bubble), FadeIn(text))
+        return (self.bubble, ReplacementTransform(self.last, self), FadeIn(bubble), FadeIn(text))
+
+    def relax(self, **kwargs):
+        
+        self.last.set_style(**kwargs)
+        last = self
+        self = self.last
+        self.last = last
+
+        return (FadeOut(self.bubble), FadeOut(self.bubble.content), ReplacementTransform(self.last, self))
 
     def set_colors(self, opacity = 1, stroke_color = BLACK, stroke_opacity = 0, override = None):
         

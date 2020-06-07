@@ -71,7 +71,7 @@ class Llama(SVGMobject):
                             stroke_color = BLACK)
         else:
             for _, llama in llamas_to_sort:
-                print(llama.get_center())
+
                 shadow_piece = round(0x20*(1/h)*(llama.get_center()[1].astype(np.int64)))
                 shadow = -(shadow_piece*0x010101)
                 llama.set_colors(main = c_adder(llama.main_color, shadow),
