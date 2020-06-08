@@ -94,6 +94,7 @@ class Old_sheperd(SVGMobject):
         svg_file = os.path.join(os.getcwd(), "assets", default_file + ".svg")
         SVGMobject.__init__(self, file_name = svg_file, **kwargs)
 
+
         self.set_colors()
         self.set_strokes()
 
@@ -101,8 +102,9 @@ class Old_sheperd(SVGMobject):
         
         thinking = Old_sheperd(mode = "thinking", **kwargs)
         thinking.move_to(self.get_center())
-        self.last = self
+        last = self
         self = thinking
+        self.last = last
 
         self.bubble = ThoughtBubble(height = 1.2, width = 1.2, stroke_color = GRAY)
         #self.bubble.set_color(WHITE)
@@ -110,7 +112,7 @@ class Old_sheperd(SVGMobject):
         text = TextMobject("?", color = WHITE)
         self.bubble.add_content(text)
 
-        return (self.bubble, ReplacementTransform(self.last, self), FadeIn(bubble), FadeIn(text))
+        return (self.bubble, ReplacementTransform(self.last, self), FadeIn(self.bubble), FadeIn(text))
 
     def relax(self, **kwargs):
         

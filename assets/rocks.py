@@ -15,7 +15,7 @@ def create_rock_field(n, h, w, s, pos_set = [1,1], size_set=1, width_ratio=1):
     
     rocks_to_sort = []
     for x in nums_init:
-        rock_type = np.ceil(np.random.rand()*5)
+        rock_type = int(np.ceil(np.random.rand()*5))
         rock = ImageMobject("assets/rock{}.png".format(rock_type), height=x[0])
         rock.move_to(x[1:]*np.array((w,h,1)))
         
