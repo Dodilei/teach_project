@@ -6,9 +6,10 @@ def interpolate(start, end, alpha):
 
 def make_path(
     func,
-    color=WHITE,
+    color= "#ffffff",
     x_min=0,
     x_max=1,
+    y_max = None,
     y_infinity = 10,
     **kwargs
     ):
@@ -21,8 +22,10 @@ def make_path(
 
         if not np.isfinite(y):
             y = y_infinity
+        elif y_max and y >= y_max:
+            y = y_infinity
 
-        return (x, y)
+        return (x, y, 0)
 
     path = ParametricFunction(parametric, color = color, **kwargs)
     path.underlying_function = func

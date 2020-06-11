@@ -5,7 +5,7 @@ import os
 def create_rock_field(n, h, w, s, pos_set = [1,1], size_set=1, width_ratio=1):
     
     nums_init = np.random.rand(n, 4)
-    nums_init[:, 1:4] += -0.5
+    nums_init[:, 1:3] += -0.5
     nums_init[:, -1] = 0
     nums_init[:, 0] = np.abs(nums_init[:, 0])
     nums_init[:, 0] += size_set
