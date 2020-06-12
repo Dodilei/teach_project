@@ -1,9 +1,12 @@
 import os
 
 
-def add_cjk():
+def add_cjk(ctex = False):
 
-    tex_template = os.path.join(os.path.dirname(__file__), "assets", "cjk_latex.tex")
+    if ctex:
+        tex_template = os.path.join(os.path.dirname(__file__), "assets", "cjk_ctex.tex")
+    else:
+        tex_template = os.path.join(os.path.dirname(__file__), "assets", "cjk_latex.tex")
 
     with open(tex_template, "r") as infile:
         TEMPLATE_TEXT_FILE_BODY = infile.read()
