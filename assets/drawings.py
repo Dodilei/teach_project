@@ -135,7 +135,7 @@ class DoubleSpeechBubble(Bubble):
     CONFIG = {
         "file_name": "Bubbles_double_speech.svg",
         "height": 4
-    }z
+    }
 
 
 class ThoughtBubble(Bubble):
