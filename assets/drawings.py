@@ -135,7 +135,7 @@ class DoubleSpeechBubble(Bubble):
     CONFIG = {
         "file_name": "Bubbles_double_speech.svg",
         "height": 4
-    }
+    }z
 
 
 class ThoughtBubble(Bubble):
@@ -164,7 +164,7 @@ class Car(SVGMobject):
     }
 
     def __init__(self, **kwargs):
-        self.file_name = os.path.join("assets", self.file_name)
+        self.file_name = os.path.join("assets", self.CONFIG["file_name"])
         SVGMobject.__init__(self, **kwargs)
 
         path = self.submobjects[0]
