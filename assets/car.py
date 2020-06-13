@@ -37,7 +37,7 @@ class Car(SVGMobject):
         def flatten_index(*keys):
             indexes = []
             for k in keys:
-                indexes += [*Italian_coffe.index_names[k]]
+                indexes += [*Car.index_names[k]]
             return indexes
 
         for i in flatten_index("rear", "bump"):
