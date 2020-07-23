@@ -10,7 +10,7 @@ def make_new_tex_temp(TEMPLATE, *packages):
     lines = TEMPLATE.split("\n")
     for i, line in enumerate(lines[::-1]):
         if "usepackage" in line:
-            add_index = len(lines)-i +1
+            add_index = len(lines)-i
             break
 
     lines = lines[:add_index] + new_packs + lines[add_index:]
