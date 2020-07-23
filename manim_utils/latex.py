@@ -2,12 +2,20 @@ import os
 from manimlib.imports import *
 
 def make_new_tex_temp(TEMPLATE, *packages):
-  new_packs = ""
+    new_packs = []
 
-  for p in packages:
-    new_packs += "\n\\usepackage{%s}" % p
+    for p in packages:
+        new_packs.append("\\usepackage{%s}" % p)
 
-  return (TEMPLATE[:35] + new_packs + TEMPLATE[36:])
+    lines = TEMPLATE.split("\n")
+    for i, line in enumerate(lines):
+        if "usepackage" in line:
+            add_index = len(lines)-i +1
+            break
+
+    lines = lines[:add_index] + new_packs + lines[add_index:]
+
+    return "\n".join(lines)
 
 
 class CustomTMobject(TextMobject):
