@@ -20,7 +20,7 @@ class CustomTMobject(TextMobject):
         self.CONFIG["template_tex_file_body"] = self.template
         
 
-    def generate(*args, **kwargs):
+    def generate(self, *args, **kwargs):
 
         digest_config(self,
             {**kwargs, "template_tex_file_body": self.template}
