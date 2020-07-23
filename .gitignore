@@ -1,4 +1,6 @@
 .ipynb_checkpoints/
-*/MVideos
+MVideos/
 *.mp4
 Vdesc
+Frames/
+*.kdenlive
