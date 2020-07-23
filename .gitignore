@@ -1,5 +1,6 @@
 .ipynb_checkpoints/
 MVideos/
+*.mov
 *.mp4
 Vdesc
 Frames/
