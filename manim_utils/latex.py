@@ -1,18 +1,37 @@
 import os
+from manimlib.imports import *
+
+def make_new_tex_temp(TEMPLATE, *packages):
+  new_packs = ""
+
+  for p in packages:
+    new_packs += "\n\\usepackage{%s}" % p
+
+  return (TEMPLATE[:35] + new_packs + TEMPLATE[36:])
 
 
-def add_cjk(ctex = False):
+class CustomTMobject(TextMobject):
+    CONFIG = {}
 
-    if ctex:
-        tex_template = os.path.join(os.path.dirname(__file__), "assets", "cjk_ctex.tex")
-    else:
-        tex_template = os.path.join(os.path.dirname(__file__), "assets", "cjk_latex.tex")
+    def __init__(self, *packages):
+        
+        self.template = make_new_tex_temp(TEMPLATE_TEX_FILE_BODY, *packages)
 
-    with open(tex_template, "r") as infile:
-        TEMPLATE_TEXT_FILE_BODY = infile.read()
-        TEMPLATE_TEX_FILE_BODY = TEMPLATE_TEXT_FILE_BODY.replace(
-            "YourTextHere",
-            "\\begin{align*}\n" + "YourTextHere" + "\n\\end{align*}",
+        self.CONFIG["template_tex_file_body"] = self.template
+        
+
+    def generate(*args, **kwargs):
+
+        digest_config(self,
+            {**kwargs, "template_tex_file_body": self.template}
         )
 
-        return TEMPLATE_TEXT_FILE_BODY
+        TextMobject.__init__(self,
+            *args,
+            template_tex_file_body = self.template,
+            **kwargs)
+
+        return self
+
+
+
